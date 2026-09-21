@@ -19,3 +19,9 @@ npm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# PowerDesigner
+*.sws
+*.cdb
+*.ldb
+*.pdb
