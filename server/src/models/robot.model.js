@@ -15,7 +15,7 @@ Robot extends Model cria o nosso modelo, ainda sem atributos.
 
 Robot.init(
     {
-        robotID:{
+        robotId:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -29,7 +29,7 @@ Robot.init(
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-        serial_number: {
+        serialNumber: {
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true,

@@ -2,6 +2,8 @@
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
+import robotRouter from './routes/robot.routes.js';
+import { errorHandler } from './middleware/error-handler.js';
 
 const app = express();
 
@@ -21,6 +23,9 @@ app.get('/api/health', (request, response) => {
         message: 'Mission Control API is running',
     });
 });
+
+app.use('/api/robots', robotRouter);
+app.use(errorHandler);
 
 export default app;
 
