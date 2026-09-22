@@ -2,8 +2,11 @@
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-import robotRouter from './routes/robot.routes.js';
+
 import { errorHandler } from './middleware/error-handler.js';
+import missionRouter from './routes/mission.routes.js';
+import operatorRouter from './routes/operator.routes.js';
+import robotRouter from './routes/robot.routes.js';
 
 const app = express();
 
@@ -25,18 +28,8 @@ app.get('/api/health', (request, response) => {
 });
 
 app.use('/api/robots', robotRouter);
+app.use('/api/operators', operatorRouter);
+app.use('/api/missions', missionRouter);
 app.use(errorHandler);
 
 export default app;
-
-/*
-
-express() cria a aplicação;
-helmet() adiciona cabeçalhos de segurança;
-cors() permite pedidos apenas do endereço do frontend indicado no .env;
-express.json() permite receber JSON;
-GET /api/health será o nosso primeiro endpoint;
-export default app permite iniciar esta aplicação noutro ficheiro.
-
-
-*/

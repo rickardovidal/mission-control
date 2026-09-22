@@ -3,7 +3,7 @@ import { body, param } from 'express-validator';
 
 export const robotIdValidator = [
     param('robotId')
-        .isInt({min: 1})
+        .isInt({ min: 1 })
         .withMessage('robotId must be a positive integer')
         .toInt(),
 ];
@@ -41,14 +41,3 @@ export const createRobotValidator = [
         .withMessage('batteryLevel must be an integer between 0 and 100')
         .toInt(),
 ];
-
-/**
- * ê robotId nos parâmetros do endereço;
-exige um número inteiro positivo;
-produz uma mensagem clara se for inválido;
-converte o valor de texto para número com toInt().
- 
-
-
-
- */

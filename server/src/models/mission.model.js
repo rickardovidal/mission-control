@@ -12,7 +12,6 @@ Mission.init(
       autoIncrement: true,
       field: "mission_id",
     },
-    //porque aqui o robotId o d é minúsculo se no modelo é maiúsculo.
     robotId: {
       type: DataTypes.INTEGER,
       allowNull: false,
